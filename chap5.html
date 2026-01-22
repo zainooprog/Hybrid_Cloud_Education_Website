@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5: The Data Vault - Storage & Databases</title>
+    <link rel="icon" href="my_logo.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f4f7f9; scroll-behavior: smooth; }
+        .sticky-header { position: sticky; top: 0; z-index: 1030; background: white; border-bottom: 2px solid #dee2e6; }
+        .option-item { cursor: pointer; transition: all 0.2s; }
+        .option-item:hover { background-color: #f8f9fa; }
+        .correct { background-color: #d1fae5 !important; border-color: #22c55e !important; font-weight: 600; }
+        .incorrect { background-color: #fee2e2 !important; border-color: #ef4444 !important; }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Header -->
+    <header class="sticky-header py-3 mb-4 shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h5 text-primary fw-bold mb-0">Chapter 5: The Data Vault</h1>
+            <span class="badge bg-light text-dark">Cloud Training 2026</span>
+        </div>
+    </header>
+
+    <div class="container pb-5">
+
+        <!-- Video Lessons Section -->
+        <section class="mb-5">
+            <h2 class="h4 fw-bold mb-4">🎥 Video Lessons</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="ratio ratio-16x9 border rounded shadow-sm">
+                        <iframe src="https://www.youtube.com/embed/pDG6Zvzfl3o?si=0tBaiq4fkH2kZgFB" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="ratio ratio-16x9 border rounded shadow-sm">
+                        <iframe src="https://www.youtube.com/embed/Q5aTUc7c4jg?si=RqHB76J_NnuwuvPb" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="ratio ratio-16x9 border rounded shadow-sm">
+                        <iframe src="https://www.youtube.com/embed/_Ss42Vb1SU4?si=DSJW0r9Jnnpm5K-v" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section class="card p-4 mb-5 shadow-sm">
+            <h2 class="h3 fw-bold mb-3">The Data Vault – Storage & Databases</h2>
+            <p class="fst-italic text-secondary mb-4">In the cloud, data isn't just "thrown" into one place. Choosing the wrong type of storage can lead to massive bills and slow website speeds.</p>
+
+            <!-- Cloud Storage Types -->
+            <h3 class="h5 fw-bold border-bottom pb-2 mb-3 text-primary">📦 1. Cloud Storage Types</h3>
+            <div class="mb-4">
+                <h4 class="fw-bold">A. Object Storage (The Digital Warehouse)</h4>
+                <p>This is the most popular type of cloud storage. Files are stored as "Objects." Infinitely scalable.</p>
+                <ul>
+                    <li><strong>When to use it:</strong> Backups, website images, large videos.</li>
+                    <li><strong>Key Example:</strong> Amazon S3, Google Cloud Storage.</li>
+                </ul>
+            </div>
+            <div class="mb-4">
+                <h4 class="fw-bold">B. Block Storage (Virtual Hard Drive)</h4>
+                <p>Acts like a physical hard drive attached to a server. Extremely fast for OS or databases.</p>
+                <ul>
+                    <li><strong>When to use it:</strong> Operating Systems or high-performance databases.</li>
+                    <li><strong>Key Example:</strong> Amazon EBS, Azure Managed Disks.</li>
+                </ul>
+            </div>
+            <div class="mb-4">
+                <h4 class="fw-bold">C. File Storage (Shared Office Drive)</h4>
+                <p>Shared folder accessible by multiple computers simultaneously.</p>
+                <ul>
+                    <li><strong>When to use it:</strong> Team collaboration on the same set of files.</li>
+                    <li><strong>Key Example:</strong> Amazon EFS, Google Filestore.</li>
+                </ul>
+            </div>
+
+            <!-- Cloud Databases -->
+            <h3 class="h5 fw-bold border-bottom pb-2 mb-3 text-primary">🗄️ 2. Cloud Databases</h3>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="p-3 border-start border-4 border-primary bg-light">
+                        <h5 class="fw-bold">Relational Databases (SQL)</h5>
+                        <p>Tables with rows and columns. Perfect for data requiring accuracy.</p>
+                        <p><strong>Example:</strong> Banking systems</p>
+                        <p class="fst-italic text-primary"><strong>Tools:</strong> Amazon RDS, MySQL, PostgreSQL</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-3 border-start border-4 border-purple bg-light" style="background-color:#f5f3ff;">
+                        <h5 class="fw-bold">Non-Relational Databases (NoSQL)</h5>
+                        <p>Documents or key-value pairs, built for speed and flexibility.</p>
+                        <p><strong>Example:</strong> Social media feeds</p>
+                        <p class="fst-italic text-purple"><strong>Tools:</strong> Amazon DynamoDB, MongoDB</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 p-3 border-start border-4 border-warning bg-warning bg-opacity-25 rounded">
+                <h5 class="fw-bold">💡 Data Lifecycle Management</h5>
+                <p><strong>Hot Storage:</strong> Daily access, fast but expensive.</p>
+                <p><strong>Cold Storage:</strong> Rarely accessed data, slow but cheap.</p>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <h3 class="h5 fw-bold mb-3 text-success">📝 Chapter 5 Knowledge Check</h3>
+        <form id="quizForm">
+            <div id="quiz-content" class="mb-4"></div>
+
+            <div class="text-center mb-5 p-4 border rounded bg-white shadow-sm">
+                <button type="button" class="btn btn-primary btn-lg px-5" onclick="evaluateQuiz()">Submit Quiz</button>
+                <div id="scoreDisplay" class="mt-3 h4 fw-bold d-none"></div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const mcqs = [
+            { q: "Which storage type is best for storing billions of user profile pictures?", o: ["Block Storage", "Object Storage", "RAM", "DVD"], a: 1 },
+            { q: "In the cloud, 'Block Storage' is primarily used for:", o: ["Sending emails", "Running Operating Systems and Databases", "Storing movies", "Website logos"], a: 1 },
+            { q: "If three different servers need to access the same shared folder at once, use:", o: ["Object Storage", "Block Storage", "File Storage", "A USB stick"], a: 2 },
+            { q: "A Relational Database (SQL) is based on:", o: ["Random files", "Tables with Rows and Columns", "Audio clips", "Notes"], a: 1 },
+            { q: "Which database is best for a high-speed social media app with changing data structures?", o: ["SQL (Relational)", "NoSQL (Non-Relational)", "A Text file", "A spreadsheet"], a: 1 },
+            { q: "What is 'Cold Storage' used for?", o: ["High-speed gaming", "Data that is rarely accessed but kept for long-term safety", "Storing the OS", "Live streaming"], a: 1 },
+            { q: "Amazon S3 is the world's most famous example of:", o: ["Block Storage", "Object Storage", "RAM", "File Storage"], a: 1 },
+            { q: "Which database tool would a Bank likely use for its sensitive transactions?", o: ["MongoDB (NoSQL)", "MySQL (SQL)", "Google Photos", "Snapchat"], a: 1 },
+            { q: "'Redundancy' in cloud storage means:", o: ["Deleting old data", "Keeping multiple copies of data in different zones for safety", "Changing the file type", "Making files smaller"], a: 1 },
+            { q: "Data 'Durability' refers to:", o: ["How fast the data loads", "The probability that data will not be lost over time", "The cost per GB", "The icon color"], a: 1 },
+            { q: "When you modify a file in Object Storage, what happens?", o: ["Only the change is saved", "The entire object is replaced by a new version", "The computer restarts", "It turns into a block"], a: 1 },
+            { q: "DynamoDB is a popular choice for which data type?", o: ["SQL", "NoSQL", "Offline", "Printed"], a: 1 },
+            { q: "Which storage is attached directly to a server like a local hard drive?", o: ["Object Storage", "Block Storage", "Google Drive", "Dropbox"], a: 1 },
+            { q: "'High Availability' in databases means:", o: ["It is very cheap", "It is almost always online and reachable", "It is very large", "It is for admins only"], a: 1 },
+            { q: "What is a 'Key-Value' pair in NoSQL?", o: ["A lock and key", "A unique label (key) linked to specific info (value)", "A keyboard type", "A password hint"], a: 1 },
+            { q: "Why is Object Storage usually cheaper than Block Storage?", o: ["It is slower and designed for massive scale", "It is made of cheaper materials", "It doesn't use power", "It only works on weekends"], a: 0 },
+            { q: "A 'Database Schema' is:", o: ["A type of computer virus", "The formal design and structure of a database", "A payment plan", "A cloud provider"], a: 1 },
+            { q: "In cloud storage, 'IOPS' measures:", o: ["The weight of the server", "The speed of Input/Output operations on a disk", "The number of users", "The price"], a: 1 },
+            { q: "A 'Snapshot' in cloud storage is:", o: ["A picture of the server", "A point-in-time backup of a virtual disk", "A fast internet speed", "A social media app"], a: 1 },
+            { q: "Which service is best for storing system logs and website backups?", o: ["S3 (Object Storage)", "RAM", "DVD", "Local Disk"], a: 0 }
+        ];
+
+        const container = document.getElementById('quiz-content');
+        mcqs.forEach((item, index) => {
+            let optionsHTML = item.o.map((opt, i) => `
+                <div class="form-check option-item border p-2 rounded mb-2" id="label-${index}-${i}">
+                    <input class="form-check-input me-2" type="radio" name="q${index}" value="${i}" id="q${index}-${i}">
+                    <label class="form-check-label" for="q${index}-${i}">${opt}</label>
+                </div>
+            `).join('');
+
+            container.innerHTML += `
+                <div class="card p-3 mb-3">
+                    <p class="fw-bold">${index + 1}. ${item.q}</p>
+                    ${optionsHTML}
+                </div>
+            `;
+        });
+
+        function evaluateQuiz() {
+            let score = 0;
+            mcqs.forEach((item, index) => {
+                const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                const correctIdx = item.a;
+
+                item.o.forEach((_, i) => {
+                    document.getElementById(`label-${index}-${i}`).classList.remove('correct', 'incorrect');
+                });
+
+                if (selected) {
+                    const userVal = parseInt(selected.value);
+                    if (userVal === correctIdx) {
+                        score++;
+                        document.getElementById(`label-${index}-${userVal}`).classList.add('correct');
+                    } else {
+                        document.getElementById(`label-${index}-${userVal}`).classList.add('incorrect');
+                        document.getElementById(`label-${index}-${correctIdx}`).classList.add('correct');
+                    }
+                } else {
+                    document.getElementById(`label-${index}-${correctIdx}`).classList.add('correct');
+                }
+            });
+
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            scoreDisplay.textContent = `Quiz Complete! Score: ${score} / ${mcqs.length}`;
+            scoreDisplay.className = "mt-3 h4 fw-bold d-block " + (score > 14 ? 'text-success' : 'text-danger');
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2: Cloud Computing & Hybrid Foundations</title>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #f4f7f9; color: #333; line-height: 1.6; padding-bottom: 50px; }
+
+        header {
+            background: #ffffff; padding: 15px 5%; display: flex; justify-content: space-between;
+            align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;
+        }
+        .logo-area { display: flex; align-items: center; gap: 10px; }
+        .logo-area img { width: 45px; height: 45px; border-radius: 5px; }
+        .logo-area h1 { font-size: 20px; color: #004aad; font-weight: 700; }
+
+        .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        
+        h2 { color: #004aad; border-bottom: 4px solid #ffbd59; padding-bottom: 10px; margin-bottom: 25px; font-size: 28px; }
+        h3 { color: #004aad; margin-top: 30px; margin-bottom: 15px; font-size: 22px; border-left: 5px solid #ffbd59; padding-left: 15px; }
+
+        /* Story Section */
+        .story-box { background: #eef5ff; padding: 25px; border-radius: 8px; margin-bottom: 30px; border: 1px solid #d0e3ff; }
+        .story-box p { font-style: italic; font-size: 16px; color: #444; }
+
+        /* Concept Cards */
+        .concept-card { background: #fdfdfd; border: 1px solid #e1e8ed; padding: 20px; border-radius: 8px; margin-bottom: 15px; }
+        .concept-card strong { color: #004aad; display: block; margin-bottom: 5px; font-size: 18px; }
+        
+        /* Features Section */
+        .feature-item { margin-bottom: 15px; padding-left: 10px; border-left: 3px solid #004aad; }
+        .feature-item b { color: #004aad; }
+
+        /* Video Grid */
+        .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
+        .video-box { background: #000; border-radius: 10px; overflow: hidden; aspect-ratio: 16/9; border: 2px solid #ddd; }
+        .video-box iframe { width: 100%; height: 100%; border: none; }
+
+        /* Quiz Styling */
+        .quiz-container { background: #fff9e6; padding: 30px; border-radius: 12px; border: 2px solid #ffbd59; margin-top: 40px; }
+        .q-block { margin-bottom: 25px; background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #ddd; }
+        .q-text { font-weight: 600; display: block; margin-bottom: 15px; }
+        
+        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .option-btn { 
+            padding: 12px; border: 2px solid #ddd; background: #fff; border-radius: 6px; 
+            cursor: pointer; text-align: left; transition: 0.3s; font-size: 14px;
+        }
+        .option-btn:hover { background: #f0f7ff; border-color: #004aad; }
+        .option-btn.selected { background: #004aad; color: #fff; border-color: #004aad; }
+
+        /* Results Display */
+        .correct-ans { background-color: #d4edda !important; border-color: #28a745 !important; color: #155724 !important; font-weight: bold; }
+        .wrong-ans { background-color: #f8d7da !important; border-color: #dc3545 !important; color: #721c24 !important; }
+        .disabled { pointer-events: none; }
+
+        #submit-quiz { 
+            display: block; width: 100%; padding: 18px; background: #004aad; color: white; 
+            border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 20px; transition: 0.3s;
+        }
+        #submit-quiz:hover { background: #003580; }
+        #result-box { 
+            display: none; margin-top: 30px; padding: 25px; text-align: center; 
+            background: #e7f3ff; border: 2px solid #004aad; border-radius: 12px; 
+        }
+
+        footer { text-align: center; padding: 40px 0; color: #888; font-size: 14px; }
+        
+        @media (max-width: 600px) { .options-grid, .video-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<link rel="icon" type="image" href="my_logo.png">
+<body>
+
+<header>
+    <div class="logo-area">
+        <img src="my_logo.png" alt="Hybrid Cloud Logo">
+        <h1>Hybrid Cloud Education</h1>
+    </div>
+</header>
+
+<div class="container">
+    <h2>Chapter 2: Cloud Computing & Hybrid Foundations</h2>
+
+    <!-- Story Evolution -->
+    <h3>📖 The Evolution: From Aslam to SafeBank</h3>
+    <div class="story-box">
+        <p>"Think of Aslam, a small business owner who sold his physical servers to join the Public Cloud because it was cheaper and easier. But then, big companies like SafeBank realized they couldn't keep their secret passwords and customer data on a public platform. They built a Private Cloud for security. Eventually, they connected both to create a Hybrid Cloud—getting the high security of a private server plus the extra cheap space of a public cloud when needed."</p>
+    </div>
+
+    <!-- Core Concepts -->
+    <h3>🔍 Core Concepts</h3>
+    <div class="concept-card">
+        <strong>1. Public Cloud (For Everyone)</strong>
+        <p>Computing services offered over the open internet (like Google Drive or AWS). Affordable, but less control over underlying security.</p>
+    </div>
+    <div class="concept-card">
+        <strong>2. Private Cloud (Just for You)</strong>
+        <p>A dedicated data center used by only one company. Highly secure but expensive to maintain.</p>
+    </div>
+    <div class="concept-card">
+        <strong>3. Hybrid Cloud (Best of Both)</strong>
+        <p>A mix where companies keep sensitive data on private servers and run everyday apps on the public cloud.</p>
+    </div>
+
+    <!-- Technical Features -->
+    <h3>⚙️ Technical Features & Benefits</h3>
+    <div class="concept-card">
+        <div class="feature-item"><b>Virtualization:</b> Software allowing one physical computer to act like many virtual ones.</div>
+        <div class="feature-item"><b>Orchestration:</b> The "Manager" software that moves data between clouds automatically.</div>
+        <div class="feature-item"><b>Cloud Bursting:</b> Shifting extra traffic to the public cloud when private servers are full.</div>
+        <div class="feature-item"><b>Data Sovereignty:</b> Keeping data in specific locations to follow local laws.</div>
+        <div class="feature-item"><b>Scalability:</b> Instantly growing resources as your users increase.</div>
+    </div>
+
+    <!-- Videos -->
+    <h3>🎥 Video Lessons</h3>
+    <div class="video-grid">
+        <div class="video-box"><iframe width="200" height="300"src="https://www.youtube.com/embed/1BMO7YkwR6Y?si=kxquUbfBUf6NnZaS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div class="video-box"><iframe width="200" height="300"src="https://www.youtube.com/embed/3kGFBBy3Lyg?si=2RtQ-VqhVqNp8aVt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    </div>
+
+    <!-- Quiz -->
+    <div class="quiz-container">
+        <h3 style="border:none; text-align:center;">📝 chapter 2: Mega Quiz</h3>
+        
+        <div id="quiz-wrapper">
+            <!-- 20 Questions -->
+            <div class="q-block" data-correct="Internet">
+                <span class="q-text">1. What is the main way to access cloud services?</span>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="select(this)">Bluetooth</button>
+                    <button class="option-btn" onclick="select(this)">USB</button>
+                    <button class="option-btn" onclick="select(this)">Internet</button>
+                    <button class="option-btn" onclick="select(this)">Satellite</button>
+                </div>
+            </div>
+
+            <div class="q-block" data-correct="Cloud was cheaper and easier">
+                <span class="q-text">2. Why did Aslam sell his hardware in the story?</span>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="select(this)">Cloud was cheaper and easier</button>
+                    <button class="option-btn" onclick="select(this)">His computer was old</button>
+                    <button class="option-btn" onclick="select(this)">Internet was free</button>
+                    <button class="option-btn" onclick="select(this)">Electricity was cheap</button>
+                </div>
+            </div>
+
+            <div class="q-block" data-correct="Private and Public Cloud">
+                <span class="q-text">3. Hybrid Cloud is a mixture of which two things?</span>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="select(this)">RAM and ROM</button>
+                    <button class="option-btn" onclick="select(this)">Private and Public Cloud</button>
+                    <button class="option-btn" onclick="select(this)">Mobile and PC</button>
+                    <button class="option-btn" onclick="select(this)">Wifi and Ethernet</button>
+                </div>
+            </div>
+
+            <div class="q-block" data-correct="To shift extra load to the Public Cloud">
+                <span class="q-text">4. What is the goal of 'Cloud Bursting'?</span>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="select(this)">To delete data</button>
+                    <button class="option-btn" onclick="select(this)">To shift extra load to the Public Cloud</button>
+                    <button class="option-btn" onclick="select(this)">To cool down the server</button>
+                    <button class="option-btn" onclick="select(this)">To turn off the internet</button>
+                </div>
+            </div>
+
+            <div class="q-block" data-correct="Virtualization">
+                <span class="q-text">5. Which technology turns hardware into cloud resources?</span>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="select(this)">Printing</button>
+                    <button class="option-btn" onclick="select(this)">Virtualization</button>
+                    <button class="option-btn" onclick="select(this)">Typing</button>
+                    <button class="option-btn" onclick="select(this)">Scanning</button>
+                </div>
+            </div>
+
+            <div class="q-block" data-correct="Orchestration">
+                <span class="q-text">6. Who acts as the 'Manager' in a Hybrid Cloud setup?</span>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="select(this)">Keyboard</button>
+                    <button class="option-btn" onclick="select(this)">Orchestration</button>
+                    <button class="option-btn" onclick="select(this)">Router</button>
+                    <button class="option-btn" onclick="select(this)">Monitor</button>
+                </div>
+            </div>
+
+            <div class="q-block" data-correct="Legal data protection">
+                <span class="q-text">7. What is 'Data Sovereignty' about?</span>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="select(this)">Data speed</button>
+                    <button class="option-btn" onclick="select(this)">Legal data protection</button>
+                    <button class="option-btn" onclick="select(this)">Deleting data</button>
+                    <button class="option-btn" onclick="select(this)">Screen size</button>
+                </div>
+            </div>
+
+            <div class="q-block" data-correct="Private Cloud">
+                <span class="q-text">8. Where did SafeBank keep its secret data?</span>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="select(this)">Public Cloud</button>
+                    <button class="option-btn" onclick="select(this)">Private Cloud</button>
+                    <button class="option-btn" onclick="select(this)">Social Media</button>
+                    <button class="option-btn" onclick="select(this)">YouTube</button>
+                </div>
+            </div>
+
+            <div class="q-block" data-correct="An electricity bill">
+                <span class="q-text">9. The 'Pay-as-you-go' model is like which of these?</span>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="select(this)">An electricity bill</button>
+                    <button class="option-btn" onclick="select(this)">Buying a car</button>
+                    <button class="option-btn" onclick="select(this)">Gym membership</button>
+                    <button class="option-btn" onclick="select(this)">A gift</button>
+                </div>
+            </div>
+
+            <div class="q-block" data-correct="For a secure connection">
+                <span class="q-text">10. Why is a VPN used in Hybrid Cloud?</span>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="select(this)">To increase speed</button>
+                    <button class="option-btn" onclick="select(this)">For a secure connection</button>
+                    <button class="option-btn" onclick="select(this)">To play games</button>
+                    <button class="option-btn" onclick="select(this)">To connect a keyboard</button>
+                </div>
+            </div>
+
+            <div class="q-block" data-correct="Network Access Model">
+                <span class="q-text">11. According to NIST, Cloud Computing is a:</span>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="select(this)">Hardware</button>
+                    <button class="option-btn" onclick="select(this)">Network Access Model</button>
+                    <button class="option-btn" onclick="select(this)">Software App</button>
+                    <button class="option-btn" onclick="select(this)">Search Engine</button>
+                </div>
+            </div>
+
+            <div class="q-block" data-correct="Scaling resources up or down quickly">
+                <span class="q-text">12. What is 'Rapid Elasticity'?</span>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="select(this)">Breaking the computer</button>
+                    <button class="option-btn" onclick="select(this)">Scaling resources up or down quickly</button>
+                    <button class="option-btn" onclick="select(this)">Slow internet</button>
+                    <button class="option-btn" onclick="select(this)">Fixed storage</button>
+                </div>
+            </div>
+
+            <div class="q-block" data-correct="Netflix">
+                <span class="q-text">13. Which company uses AWS to stream movies globally?</span>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="select(this)">Toyota</button>
+                    <button class="option-btn" onclick="select(this)">Netflix</button>
+                    <button class="option-btn" onclick="select(this)">Nike</button>
+                    <button class="option-btn" onclick="select(this)">Samsung</button>
+                </div>
+            </div>
+
+            <div class="q-block" data-correct="Sharing resources among many users">
+                <span class="q-text">14. What is the main benefit of 'Resource Pooling'?</span>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="select(this)">One user only</button>
+                    <button class="option-btn" onclick="select(this)">Sharing resources among many users</button>
+                    <button class="option-btn" onclick="select(this)">Deleting data</button>
+                    <button class="option-btn" onclick="select(this)">Buying hardware</button>
+                </div>
+            </div>
+
+            <div class="q-block" data-correct="Microsoft Azure">
+                <span class="q-text">15. Which technology is a 'Public Cloud' provider?</span>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="select(this)">Microsoft Azure</button>
+                    <button class="option-btn" onclick="select(this)">VLC Player</button>
+                    <button class="option-btn" onclick="select(this)">Photoshop</button>
+                    <button class="option-btn" onclick="select(this)">Notepad</button>
+                </div>
+            </div>
+
+            <div class="q-block" data-correct="Clouds can share and exchange data">
+                <span class="q-text">16. Interoperability means:</span>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="select(this)">Clouds cannot talk</button>
+                    <button class="option-btn" onclick="select(this)">Clouds can share and exchange data</button>
+                    <button class="option-btn" onclick="select(this)">Deleting the internet</button>
+                    <button class="option-btn" onclick="select(this)">Buying new RAM</button>
+                </div>
+            </div>
+
+            <div class="q-block" data-correct="False (Any business can use it)">
+                <span class="q-text">17. True or False: Hybrid cloud is only for massive banks.</span>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="select(this)">True</button>
+                    <button class="option-btn" onclick="select(this)">False (Any business can use it)</button>
+                </div>
+            </div>
+
+            <div class="q-block" data-correct="Floppy Disk">
+                <span class="q-text">18. Which of these is NOT a core component of Hybrid Cloud?</span>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="select(this)">Private Cloud</button>
+                    <button class="option-btn" onclick="select(this)">Public Cloud</button>
+                    <button class="option-btn" onclick="select(this)">Floppy Disk</button>
+                    <button class="option-btn" onclick="select(this)">Network Connection</button>
+                </div>
+            </div>
+
+            <div class="q-block" data-correct="Non-sensitive apps are run">
+                <span class="q-text">19. What happens in the Public Cloud side of a Hybrid setup?</span>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="select(this)">Secret data is stored</button>
+                    <button class="option-btn" onclick="select(this)">Non-sensitive apps are run</button>
+                    <button class="option-btn" onclick="select(this)">Internet is turned off</button>
+                    <button class="option-btn" onclick="select(this)">No one can access it</button>
+                </div>
+            </div>
+
+            <div class="q-block" data-correct="Global Reach">
+                <span class="q-text">20. Cloud computing lets you sit in one country and keep data in another. This is called:</span>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="select(this)">Local Access</button>
+                    <button class="option-btn" onclick="select(this)">Global Reach</button>
+                    <button class="option-btn" onclick="select(this)">Physical Storage</button>
+                    <button class="option-btn" onclick="select(this)">Manual Scaling</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submission -->
+        <button id="submit-quiz" onclick="processResults()">Submit Quiz</button>
+
+        <div id="result-box">
+            <h2 id="display-score">Your Score: 0 / 20</h2>
+        </div>
+    </div>
+</div>
+
+<footer>&copy; 2026 Hybrid Cloud Education. All rights reserved.</footer>
+
+<script>
+    function select(btn) {
+        let parent = btn.parentElement;
+        parent.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+    }
+
+    function processResults() {
+        let finalScore = 0;
+        let questions = document.querySelectorAll('.q-block');
+        
+        questions.forEach(q => {
+            let correctText = q.getAttribute('data-correct').trim();
+            let selectedBtn = q.querySelector('.option-btn.selected');
+            let allBtns = q.querySelectorAll('.option-btn');
+
+            allBtns.forEach(btn => {
+                btn.classList.add('disabled');
+                // Highlight correct answer in green
+                if (btn.innerText.trim() === correctText) {
+                    btn.classList.add('correct-ans');
+                }
+                // Highlight wrong selection in red
+                if (selectedBtn && selectedBtn === btn && btn.innerText.trim() !== correctText) {
+                    btn.classList.add('wrong-ans');
+                }
+            });
+
+            if (selectedBtn && selectedBtn.innerText.trim() === correctText) {
+                finalScore++;
+            }
+        });
+
+        // Update score display
+        document.getElementById('result-box').style.display = 'block';
+        document.getElementById('display-score').innerText = "Your Score: " + finalScore + " / 20";
+        document.getElementById('submit-quiz').style.display = 'none';
+        
+        // Scroll to results
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
